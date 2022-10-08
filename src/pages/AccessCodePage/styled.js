@@ -7,11 +7,25 @@ export const PromptContainer = styled.div`
     position: fixed;
     align-items: center;
     justify-content: center;
+
+    animation: fadeInAnimation ease-in-out 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+
+    @keyframes fadeInAnimation {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
 `
 
 export const PromptText = styled.span`
     font-family: 'Inter Tight', sans-serif;
     font-size: 40px;
+    color: #444444;
 `
 
 const CHAR_WIDTH = 1;

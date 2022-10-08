@@ -5,7 +5,8 @@ import reportWebVitals from './reportWebVitals';
 import { Routes, Route, HashRouter } from 'react-router-dom';
 import ScrollToTop from './utils/ScrollToTop/ScrollToTop';
 import AccessCodePage from './pages/AccessCodePage/AccessCodePage'
-import PersonalReachPage from './pages/PersonalReachPage/PersonalReachPage'
+import HomePage from './pages/HomePage/HomePage'
+import LineagePage from './pages/LineagePage/LineagePage';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root')
@@ -21,7 +22,10 @@ root.render(
         <Route index={true} element={<AccessCodePage />} />
       </Route>
       <Route path="/home" >
-        <Route index={true} element={<PersonalReachPage />} />
+        <Route index={true} element={<HomePage />} />
+      </Route>
+      <Route path="/lineage" >
+        <Route index={true} element={<LineagePage />} />
       </Route>
       <Route path="*" element={<AccessCodePage />} />
     </Routes>

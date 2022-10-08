@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const ROWS = 4;
+export const ROWS = 3;
 export const COLS = 10;
 export const ROW_SPACING = 20;
 export const COL_SPACING = 20;
@@ -43,7 +43,7 @@ export const UserGridContainer = styled.div`
 export const UserGrid = styled.div`
     display: grid;
     grid-template-columns: repeat(auto-fill, 6.6vw);
-    grid-template-rows: repeat(5, 6.6vw);
+    grid-template-rows: repeat(2, 6.6vw);
     grid-gap: 2vw;
 `
 
@@ -58,4 +58,39 @@ export const UserGridItem = styled.div`
         cursor: pointer;
         transform: scale(1.02);
     }
+`
+
+export const LeftFixedTextContainer = styled.div`
+    position: fixed;
+    left: 3vw;
+    bottom: 3vw;
+`
+
+export const LeftSymbol = styled.span`
+    margin-right: 0.5vw;
+    font-weight: 400;
+    font-family: 'Roboto Mono', sans-serif;
+    color: #555555;
+    font-size: 15px;
+`
+
+export const RightFixedTextContainer = styled.div`
+    position: fixed;
+    right: 3vw;
+    bottom: 3vw;
+`
+
+export const RightSymbol = styled.span`
+    margin-left: 0.5vw;
+    font-weight: 400;
+    font-family: 'Roboto Mono', sans-serif;
+    color: #555555;
+    font-size: 15px;
+`
+
+export const FixedText = styled.span`
+    font-size: 15px;
+    font-weight: 400;
+    font-family: 'Roboto Mono', sans-serif;
+    color: #555555;
 `
