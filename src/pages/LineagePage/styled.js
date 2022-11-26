@@ -91,12 +91,21 @@ export const RightSymbol = styled.span`
     font-size: 15px;
 `
 
-export const CenterItemsContainer = styled.div`
+export const VerticalCenterContainer = styled.div`
+    display: block;
     position: absolute;
     top: 50%;
     left: 50%;
+    width: 100%;
     transform: translateX(-50%) translateY(-50%);
     align-content: center;
+    text-align: center;
+`
+
+export const CenterItemsContainer = styled.div`
+    display: block;
+    align-content: center;
+    
 `
 
 export const LargeCenterText = styled.span`
@@ -111,6 +120,24 @@ export const FixedText = styled.span`
     font-weight: 400;
     font-family: 'Roboto Mono', sans-serif;
     color: #555555;
+`
+
+export const SubtitleContainer = styled.div`
+    position: absolute;
+    bottom: 6.5vh;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+`
+
+export const SubtitleText = styled.span`
+    position: relative;
+    display: block;
+    font-family: 'Lora', serif;
+    font-weight: 400;
+    font-size: 18px;
+    margin-top: 90px;
+    color: #666666;
 `
 
 export const EnterPromptContainer = styled.span`

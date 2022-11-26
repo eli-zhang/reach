@@ -1,7 +1,9 @@
 import { useState } from 'react'
 import { PromptText, PromptContainer, TextInput, EnterSymbol, EnterPromptContainer, EnterPrompt } from './styled'
 import { useNavigate } from "react-router-dom";
+import Cookies from 'universal-cookie';
 
+const cookies = new Cookies();
 
 const AccessCodePage = () => {
     let navigate = useNavigate();
@@ -13,6 +15,9 @@ const AccessCodePage = () => {
     }
 
     const handleKeyDown = (event) => {
+        const cookies = new Cookies();
+        cookies.set('accessCode', accessCode.substring(accessCode.length - 7), { path: '/' });
+
         if (event.key === 'Enter') {
             navigate('/home')
         }
