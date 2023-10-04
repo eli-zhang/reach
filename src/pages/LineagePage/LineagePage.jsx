@@ -11,14 +11,14 @@ import { Elements } from "@stripe/react-stripe-js";
 import CheckoutForm from "./CheckoutForm";
 require('./stripeStyle.css')
 
-const FINAL_PROMPT_TEXT = "Welcome to Reach.";
+const FINAL_PROMPT_TEXT = "Ready to get started?";
 const stripePromise = loadStripe("pk_test_51LoGViKv008lOcIWwZ9EwabpQbjh8gfLoncVeufR7fVtxYhFjTerQ3ZjY0kstPTri0hjiVJ7ncjx2w3uhRayZDPg00pPKf9lzT");
 const cookies = new Cookies();
 
 function LineagePage() {
     // const stripe = useStripe();
     const [clientSecret, setClientSecret] = useState("");
-    const [showCheckout, setShowCheckout] = useState(false);
+    // const [showCheckout, setShowCheckout] = useState(false);
     const [promptTextEndIndex, setPromptTextEndIndex] = useState(0);
 
     useEffect(() => {
@@ -58,8 +58,8 @@ function LineagePage() {
     
     const handler = ({ key }) => { 
         if (key === 'Enter') {
-            // window.location = "https://buy.stripe.com/6oE6r80G73ic15C288";
-            setShowCheckout(true);
+            window.location = "https://buy.stripe.com/6oE6r80G73ic15C288";
+            // setShowCheckout(true);
         }
     };
     
@@ -130,18 +130,18 @@ function LineagePage() {
             </UserGridContainer> */}
             <VerticalCenterContainer>
                 <CenterItemsContainer>
-                    {!showCheckout && <a href="https://buy.stripe.com/6oE6r80G73ic15C288" style={{ textDecoration: 'none', position: 'relative' } }>
+                    {<a href="https://buy.stripe.com/6oE6r80G73ic15C288" style={{ textDecoration: 'none', position: 'relative' } }>
                         <LargeCenterText>{FINAL_PROMPT_TEXT /*.substring(0, promptTextEndIndex) */}</LargeCenterText>
                         <EnterPromptContainer>
                             <EnterPrompt>press <b>Enter</b></EnterPrompt><EnterSymbol>↵</EnterSymbol><EnterPrompt>to activate your account.</EnterPrompt>
                         </EnterPromptContainer>
                     </a>}
 
-                    {showCheckout && (
+                    {/* {showCheckout && (
                         <Elements options={options} stripe={stripePromise}>
                             <CheckoutForm />
                         </Elements>
-                    )}
+                    )} */}
                 </CenterItemsContainer>
                 
             </VerticalCenterContainer>
@@ -155,7 +155,7 @@ function LineagePage() {
                 <Link style={{ textDecoration: 'none' }} to={"../home"}><LeftSymbol>←</LeftSymbol><FixedText>Home</FixedText></Link>
             </LeftFixedTextContainer>
             <RightFixedTextContainer>
-                <Link style={{ textDecoration: 'none' }}><FixedText>Reach map</FixedText><RightSymbol>→</RightSymbol></Link>
+                <Link style={{ textDecoration: 'none' }} to={"../logout"}><FixedText>Log out</FixedText><RightSymbol>→</RightSymbol></Link>
             </RightFixedTextContainer>
         </>
     );

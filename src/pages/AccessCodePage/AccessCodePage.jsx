@@ -18,8 +18,10 @@ const AccessCodePage = () => {
         const cookies = new Cookies();
         cookies.set('accessCode', accessCode.substring(accessCode.length - 7), { path: '/' });
 
-        if (event.key === 'Enter') {
-            navigate('/home')
+        if (event.key === 'Enter' && accessCode.length >= 7) {
+            console.log("navigating to home")
+            navigate("/home", { replace: true })
+            console.log("done")
         }
     }
 
@@ -30,7 +32,7 @@ const AccessCodePage = () => {
             </PromptText>
             <TextInput chars={7} maxlength='7' value={accessCode} 
                 onKeyDown={handleKeyDown} onChange={handleChange} spellCheck={false}/>
-            <EnterPromptContainer opacity={accessCode.length === 7 ? 1 : 0}>
+            <EnterPromptContainer opacity={accessCode.length >= 7 ? 1 : 0}>
                 <EnterPrompt>press <b>Enter</b></EnterPrompt><EnterSymbol>↵</EnterSymbol>
             </EnterPromptContainer>
         </PromptContainer>
