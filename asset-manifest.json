@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/reach/static/css/main.afeaf9b3.css",
+    "main.js": "/reach/static/js/main.3f7e48d2.js",
+    "index.html": "/reach/index.html",
+    "main.afeaf9b3.css.map": "/reach/static/css/main.afeaf9b3.css.map",
+    "main.3f7e48d2.js.map": "/reach/static/js/main.3f7e48d2.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.afeaf9b3.css",
+    "static/js/main.3f7e48d2.js"
+  ]
+}
